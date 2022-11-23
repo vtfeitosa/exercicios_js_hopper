@@ -51,7 +51,6 @@ import * as pagBrownies from './brownies.js';
 import * as pagTorta from './torta.js';
 import * as pagOvo from './ovo.js';
 
-
 btnBrownies.addEventListener('click', browniesPage);
 btnTorta.addEventListener('click', tortaPage);
 btnOvo.addEventListener('click', ovoPage);
