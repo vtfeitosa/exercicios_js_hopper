@@ -13,19 +13,20 @@ header {
 
     text-align: center;
 
-    padding: 10px;
+    padding: 2px;
 }
 
-#developmentBox a:hover {
-    color: rgb(234, 234, 234);
-    text-decoration: underline;
+#developmentBox a:hover,#infoBox a:hover {
+    text-decoration: none;
+    color: rgb(206, 206, 206);
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
     font-weight: 100;
 
     color: rgb(234, 234, 234);
+    
 }
 
 main {

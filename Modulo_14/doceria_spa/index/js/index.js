@@ -57,8 +57,7 @@ btnTorta.addEventListener('click', tortaPage);
 btnOvo.addEventListener('click', ovoPage);
 
 function browniesPage(){
-    console.log("oi")
-
+    
     history.pushState('','', 'brownies');
 
     if (location.pathname == '/brownies'){
