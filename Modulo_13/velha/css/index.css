@@ -1,0 +1,112 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0%;
+}
+
+header {
+    color: #fff;
+}
+
+#developmentBox {
+    background-color: black;
+    font-size: 0.8rem;
+
+    text-align: center;
+
+    padding: 2px;
+}
+
+#developmentBox a:hover {
+    color: grey;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 100;
+
+    color: grey;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+#infoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: black;
+
+    text-align: center;
+
+}
+
+
+#board {
+    width: 310px;
+    height: 310px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+}
+ 
+#board div > div {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-color: black;
+    background-color: #fff;
+    margin: 1px;
+
+    font-size: 110px;
+
+}
+
+.line {
+    display: flex;
+    flex-direction: row;
+}
+
+.winner {
+    background-color: rgb(142, 182, 142);
+    color: rgb(37, 110, 37);
+
+    padding: 10px;
+
+    border-radius: 20px;
+}
+
+.velha {
+    background-color: rgb(236, 141, 141);
+    color: rgb(185, 30, 30);
+}
+
+#resetGameBtn {
+    background-color: black;
+    color: white;
+
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#result {
+    font-size: 0.8rem;
+}
