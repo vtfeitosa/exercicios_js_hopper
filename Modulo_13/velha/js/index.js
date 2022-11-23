@@ -49,7 +49,7 @@ writePageContent(`
         <div data-line="2" data-colun="2" class="space"></div>
     </div>
 </div>
-<h2 id="result"></h2>
+<p id="result"></p>
 <button id="resetGameBtn">Restart</button>
 </br>
 `);
