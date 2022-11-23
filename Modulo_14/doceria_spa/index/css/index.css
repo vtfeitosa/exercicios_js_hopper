@@ -1,0 +1,91 @@
+body {
+    font-size: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0%;
+}
+
+header {
+    color: #fff;
+}
+
+#developmentBox {
+    background-color: #faa7b6;
+
+    text-align: center;
+
+    padding: 10px;
+}
+
+#developmentBox a:hover {
+    color: rgb(234, 234, 234);
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 100;
+
+    color: rgb(234, 234, 234);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 65vh;
+
+    background-image: linear-gradient(rgba(246, 185, 196, 0.566),rgba(246, 185, 196, 0.566) 50%), url(../../assets/img/logo/fundo_lc.jpg);
+    background-size: cover;
+    background-position: 0%;
+    background-repeat: repeat-x;
+
+    padding: 40px;
+}
+
+
+#infoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    background-color: #faa7b6;
+
+    text-align: center;
+}
+
+#logo {
+    width: 200px;
+    margin: 20px;
+}
+
+h2 {
+    color: #F06277;
+    background-color: #ffeceb;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#product_img {
+    width: 200px;
+    margin-top: 40px;
+}
+
+#categories{
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    color: #ffeceb;
+    background-color: #F06277;
+
+    margin: 10px;
+    padding: 10px;
+
+    border-radius: 15px;
+    border-style: none;
+}
