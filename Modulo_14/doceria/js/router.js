@@ -1,9 +1,9 @@
 import printPageBrigadeiros from './brigadeiros.js';
-import printPageCupcakes from './cupcakes';
+import printPageCupcakes from './cupcakes.js';
 import printPageDoces from './doces.js';
 import printPageHome from './home.js';
 
-export default function router(page){
+export default function router(){
     const routerObj = {
         "/": printPageHome,
         "/brigadeiros": printPageBrigadeiros,
@@ -13,9 +13,12 @@ export default function router(page){
         getPage: function(url){
             switch(url){
                 case "/":
+                    console.log(printPageHome)
                     return printPageHome();
 
                 case "/brigadeiros":
+                    console.log(printPageBrigadeiros)
+
                     return printPageBrigadeiros();
 
                 case "/cupcakes":

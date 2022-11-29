@@ -1,6 +1,3 @@
-import printPageBrigadeiros from './brigadeiros.js';
-import printPageCupcakes from './cupcakes.js';
-import printPageDoces from './doces.js';
 import createEvent from './event.js';
 
 export default function printPageHome(){
