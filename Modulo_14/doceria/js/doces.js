@@ -1,4 +1,5 @@
 import printPageHome from './home.js';
+import createEvent from './event.js';
 
 export default function printPageDoces(){
         const contentBox = document.querySelector("#pageMainContent");
