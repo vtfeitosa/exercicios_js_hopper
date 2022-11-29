@@ -5,18 +5,39 @@ import printPageDoces from './doces.js';
 export default function printPageHome(){
     const contentBox = document.querySelector("#pageMainContent");
 
-    contentBox.innerHTML = `
-        <img id="logo" src="./assets/img/logo/logo_lc.png">
-        <div id="categories">
-        <button id="btnBrigadeiros" type="button">Brigadeiros</button>
-        <button id="btnCupcakes" type="button">Cupcakes</button>
-        <button id="btnDoces" type="button">Doces</button>
-        </div>
-    `
+    const imgBox = document.createElement("img");
+    const div = document.createElement("div");
+    const btnBrigadeiros = document.createElement("button");
+    const btnCupcakes = document.createElement("button");
+    const btnDoces = document.createElement("button");
 
-    const btnBrigadeiros = document.querySelector("#btnBrigadeiros").addEventListener('click', printPageBrigadeiros);
-    const btnCupcakes = document.querySelector("#btnCupcakes").addEventListener('click', printPageCupcakes);
-    const btnDoces = document.querySelector("#btnDoces").addEventListener('click', printPageDoces);
+    contentBox.appendChild(imgBox);
+    contentBox.appendChild(div);
 
-    return "Home"
+    div.appendChild(btnBrigadeiros);
+    div.appendChild(btnCupcakes);
+    div.appendChild(btnDoces);
+
+    imgBox.id = "logo";
+    imgBox.src = "./assets/img/logo/logo_lc.png"
+    div.id = "categories";
+
+    btnBrigadeiros.id = "btnBrigadeiros";
+    btnCupcakes.id = "btnCupcakes";
+    btnDoces.id = "btnDoces";
+
+    btnBrigadeiros.type = "button";
+    btnCupcakes.type = "button";
+    btnDoces.type = "button";
+
+    btnBrigadeiros.innerText = "Brigadeiros";
+    btnCupcakes.innerText = "Cupcakes";
+    btnDoces.innerText = "Doces";
+
+    btnBrigadeiros.addEventListener('click', printPageBrigadeiros);
+    btnCupcakes.addEventListener('click', printPageCupcakes);
+    btnDoces.addEventListener('click', printPageDoces);
+
+    return contentBox
 }
+

@@ -1,17 +1,31 @@
 import printPageHome from './home.js';
 
 export default function printPageDoces(){
-    const contentBox = document.querySelector("#pageMainContent");
-    contentBox.innerHTML = `
-    <img id="logo" src="./assets/img/logo/logo_lc.png">
-    <section id="pageBox">
-        <h1>Doces</h1>
-        <p>Você foi redirecionado. Essa é a página "Doces" :)</p>
-        <p>Clique no botão abaixo para voltar para Pagina Principal</p>
-        <button id="btnHome" type="button">Voltar para o Início</button>
-    </section>
-    `
-    const btnHome = document.querySelector("#btnHome").addEventListener('click', printPageHome);
+        const contentBox = document.querySelector("#pageMainContent");
+    const imgBox = document.createElement("img");
+    const pageBox = document.createElement("section");
+    const h1 = document.createElement("h1");
+    const p = document.createElement("p");
+    const btnHome = document.createElement("button");
 
-    return "Doces"
+    contentBox.appendChild(imgLogo);
+    contentBox.appendChild(pageBox);
+
+    pageBox.appendChild(h1);
+    pageBox.appendChild(p);
+    pageBox.appendChild(btnHome);
+
+    imgBox.id = "logo";
+    imgBox.src = "./assets/img/logo/logo_lc.png"    
+    pageBox.id = "pageBox";
+    btnHome.id = "btnHome";
+    btnHome.type = "button";
+
+    h1.innerText = "Doces";
+    p.innerText = `Você foi redirecionado. Essa é a página "Doces". Clique no botão abaixo e volte para a Página Principal`
+    btnHome.innerText = "Voltar para o Início";
+
+    btnHome.addEventListener('click', printPageHome);
+
+    return contentBox;
 }
