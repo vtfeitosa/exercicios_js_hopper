@@ -35,10 +35,21 @@ export default function printPageHome(){
     btnCupcakes.innerText = "Cupcakes";
     btnDoces.innerText = "Doces";
 
-    btnBrigadeiros.addEventListener('click', printPageBrigadeiros);
-    btnCupcakes.addEventListener('click', printPageCupcakes);
-    btnDoces.addEventListener('click', printPageDoces);
+    btnBrigadeiros.addEventListener('click', function(){
+        const clickBrigadeiros = createEvent("/brigadeiros");
+        contentBox.dispatchEvent(clickBrigadeiros);
+    });
 
+    btnCupcakes.addEventListener('click', function(){
+        const clickCupcakes = createEvent("/cupcakes");
+        contentBox.dispatchEvent(clickCupcakes);
+    });
+
+    btnDoces.addEventListener('click', function(){
+        const clickDoces = createEvent("/doces");
+        contentBox.dispatchEvent(clickDoces);
+    });
+    
     return contentBox
 }
 
