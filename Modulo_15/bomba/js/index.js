@@ -20,42 +20,57 @@ footerBox.innerHTML = (`
 
 ////////////////////////////
 
-//const h1 =document.createElement("h1");
 const audio = document.createElement("audio");
-const p = document.createElement("h3");
+const leg = document.createElement("h3");
 const imgBox = document.createElement("img");
 let bombaStatus = "";
 let timeStatus = "";
-
+let intervalStatus = "";
+let maxTime = 5*1000;   
 
 function printPage(){
     bombaStatus = "off";
 
-    p.innerText = "Clique na bomba para armá-la"
+    leg.innerText = "Clique na bomba para armá-la"
     imgBox.id = "imgBox";
     imgBox.src = "./assets/img/bomba_off.png";
 
-    contentBox.appendChild(p);
+    contentBox.appendChild(leg);
     contentBox.appendChild(imgBox);
 
-    imgBox.addEventListener('click', contagem);
+    imgBox.addEventListener('click', disparar);
 
 }
 
 printPage();
 
-function contagem(){
+function disparar(){
 
     if(bombaStatus === "off"){
+        let remainingTime = 59;
         bombaStatus = "on";
-        armou();
-        timeStatus = setTimeout(explodir,10000);
+        showIMG();
+        intervalStatus = setInterval(contagem, 1000);
+        leg.innerText = "";
+        
+        function contagem() {
+        leg.innerHTML = "Agora você tem " + remainingTime + " segundos restantes para evitar que a bomba exploda, clique na imagem novamente para desativá-la!";
+        remainingTime--;
+
+        audio.src = "./assets/audio/tick.mp3"
+        audio.play();
+        contentBox.appendChild(audio);
+        }
+
+        timeStatus = setTimeout(explodir,maxTime);
+        
 
     }else if(bombaStatus === "on"){
         bombaStatus = "off";
-        p.innerText = "Clique na bomba para armá-la"
-        clearTimeout(timeStatus);
+        leg.innerText = "Clique na bomba para armá-la";
         showIMG();
+        clearTimeout(timeStatus);
+        clearInterval(intervalStatus);
 
     }else{
         printPage();
@@ -63,23 +78,15 @@ function contagem(){
        
 }
 
-function armou(){
-    showIMG();
-    p.innerText = `Agora você tem pouco tempo para evitar que exploda, clique na imagem novamente para desativá-la!`
-
-}
-
 function explodir(){
+    bombaStatus = "pow";
+    leg.innerText = "Ops... Clique na imagem para resetar a bomba!";
 
     audio.src = "./assets/audio/pow.mp3"
     audio.play();
-    contentBox.appendChild(audio);
-
-
-    bombaStatus = "pow";
+    clearInterval(intervalStatus);
 
     showIMG();
-    p.innerText = "";
 
 }
 
