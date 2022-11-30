@@ -26,7 +26,7 @@ const imgBox = document.createElement("img");
 let bombaStatus = "";
 let timeStatus = "";
 let intervalStatus = "";
-let maxTime = 5*1000;   
+let maxTime = 60*1000;   
 
 function printPage(){
     bombaStatus = "off";
