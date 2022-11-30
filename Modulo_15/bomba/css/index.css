@@ -1,0 +1,78 @@
+body {
+    font-size: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 0%;
+}
+
+header {
+    color: #fff;
+}
+
+#developmentBox {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: black;
+
+    text-align: center;
+
+    padding: 10px;
+}
+
+#developmentBox a:hover {
+    color: grey;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 100;
+
+    color: grey;
+}
+
+main {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+
+    height: 50vh;
+}
+
+
+#infoBox {
+    height: 15vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #fff;
+    background-color: black;
+
+    text-align: center;
+
+    padding: 5% 10%
+}
+
+.calcBox {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: right;
+    align-items: flex-end;
+
+}
+
+#fuelBox, #tankBox, #pathBox, #btnBox, #priceBox {
+    padding: 3.5%;
+}
+
+#imgBox {
+    height: 50vh;
+}
