@@ -62,3 +62,9 @@ main {
 #fuelBox, #tankBox, #pathBox, #btnBox, #priceBox {
     padding: 3.5%;
 }
+
+#mapBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

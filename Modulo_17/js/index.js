@@ -29,6 +29,13 @@ const btnMap = document.createElement("button");
 
 const inpBox = document.createElement("div");
 const addressBox = document.createElement("div");
+const mapBox = document.createElement("div");
+
+const mapFrame = document.createElement("iframe");
+
+let LAT = ""
+let LNG = "";
+
 
 function printPage(){
 
@@ -88,8 +95,13 @@ function checkAdress(){
     }
 
     contentBox.appendChild(addressBox);
+    contentBox.appendChild(mapBox);
+
+    mapBox.id = "mapBox";
+
     addressBox.appendChild(paragraph);
-    addressBox.appendChild(btnMap);
+    mapBox.appendChild(btnMap);
+
 
     fetch(`https://cep.awesomeapi.com.br/json/${cep.value}`)
 
@@ -101,11 +113,25 @@ function checkAdress(){
             
             paragraph.innerText = `${data.address}, ${data.district}, ${data.city} - ${data.state} (Latitude: ${data.lat} - Longitude: ${data.lng})`
             btnMap.innerText = "Exibir Mapa"
+            LAT = data.lat;
+            LNG = data.lng;
+
         })
 }
 
 btnMap.addEventListener('click',showMap);
 
 function showMap(){
-    console.log("Mapa")
+
+    mapBox.appendChild(mapFrame);
+    console.log(LNG)
+
+    mapFrame.width = "600";
+    mapFrame.height = "250";
+    //mapFrame.allowfullscreen = ""
+    //mapFrame.loading = "lazy"
+    //mapFrame.referrerpolicy = "no-referrer-when-downgrade"
+    mapFrame.src = `https://maps.google.com/maps?q=${LAT},${LNG}&hl=pt&z=14&output=embed`    
+
+    console.log("Mapa");
 }
