@@ -21,25 +21,28 @@ footerBox.innerHTML = (`
 ////////////////////////////
 
 const title = document.createElement("h1");
+const paragraph = document.createElement("p");
+
 const cep = document.createElement("input");
-const btn = document.createElement("button");
+const btnConsult = document.createElement("button");
+const btnMap = document.createElement("button");
+
 const inpBox = document.createElement("div");
 const addressBox = document.createElement("div");
-const paragraph = document.createElement("p");
 
 function printPage(){
 
     contentBox.appendChild(title);
     contentBox.appendChild(inpBox);
     inpBox.appendChild(cep);
-    inpBox.appendChild(btn);
+    inpBox.appendChild(btnConsult);
 
     cep.id = "cep";
-    btn.id = "btnConsult";
+    btnConsult.id = "btnConsult";
     addressBox.id = "address";
 
     title.innerText = "Digite um CEP:";
-    btn.innerText = "Consultar"
+    btnConsult.innerText = "Consultar"
 
 }
 
@@ -80,10 +83,13 @@ function checkAdress(){
 
     if (cep.value.length < 8){
         alert("Insira um CEP válido de 8 dígitos")
+        return printPage();
+
     }
 
     contentBox.appendChild(addressBox);
     addressBox.appendChild(paragraph);
+    addressBox.appendChild(btnMap);
 
     fetch(`https://cep.awesomeapi.com.br/json/${cep.value}`)
 
@@ -94,5 +100,12 @@ function checkAdress(){
         .then((data) => {
             
             paragraph.innerText = `${data.address}, ${data.district}, ${data.city} - ${data.state} (Latitude: ${data.lat} - Longitude: ${data.lng})`
+            btnMap.innerText = "Exibir Mapa"
         })
+}
+
+btnMap.addEventListener('click',showMap);
+
+function showMap(){
+    console.log("Mapa")
 }
