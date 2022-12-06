@@ -117,6 +117,7 @@ function checkAdress(){
             LNG = data.lng;
 
         })
+
 }
 
 btnMap.addEventListener('click',showMap);
@@ -128,10 +129,6 @@ function showMap(){
 
     mapFrame.width = "600";
     mapFrame.height = "250";
-    //mapFrame.allowfullscreen = ""
-    //mapFrame.loading = "lazy"
-    //mapFrame.referrerpolicy = "no-referrer-when-downgrade"
     mapFrame.src = `https://maps.google.com/maps?q=${LAT},${LNG}&hl=pt&z=14&output=embed`    
 
-    console.log("Mapa");
 }
