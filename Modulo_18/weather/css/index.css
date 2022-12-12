@@ -62,3 +62,53 @@ main {
 #fuelBox, #tankBox, #pathBox, #btnBox, #priceBox {
     padding: 3.5%;
 }
+
+.weatherSection {
+    display: flex;
+    flex-direction: column;
+
+    padding: 50px;
+    margin: 10px;
+
+    border-style: double;
+    border-color: black;
+}
+
+.infoDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.periodDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.morningBox, .afternoonBox, .nightBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 300px;
+    padding: 30px;
+
+    border-style: double;
+    border-color: black;
+    border-radius: 5px;
+}
+
+#pageMainContent {
+    display: flex;
+    flex-direction: column;
+
+    padding: 50px;
+
+    justify-content: space-between;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
